@@ -1,6 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:700);
 @footer-spacing: 10px;
 
+.quote-generator {
+    h2 {
+        padding-left: 15px;
+    }
+}
+
 .quote-frame {
     width: 500px;
     height: 300px;
@@ -20,10 +26,13 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            width: 75px;
+            width: 55px;
+            height: 45px;
             border-radius: 5px;
             margin-left: @footer-spacing;
             margin-bottom: @footer-spacing;
+            background: url(../assets/images/logo178x140.jpg) no-repeat 0 0;
+            background-size: cover;
         }
 
         .hashtag {

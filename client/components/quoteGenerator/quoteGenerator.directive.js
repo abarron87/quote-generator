@@ -15,22 +15,22 @@ angular.module('quoteGeneratorApp')
 
                 scope.save = function(){
                     html2canvas(element.find('.quote-frame')[0], {
-                        logging: true,
+                        //logging: true,
                         //height: 300,
                         //width: 500,
                         onrendered: function(canvas){
-                            $scope.$apply(function(){
+                            scope.$apply(function(){
                                 scope.result = canvas.toDataURL();
-                                console.log(scope.result);
+                                //console.log(scope.result);
                             });
                         }
                     })
                 };
 
-                scope.$watch('result', function(newValue, oldValue){
-                    console.log("new", newValue);
-                    console.log("old", oldValue);
-                })
+                //scope.$watch('result', function(newValue, oldValue){
+                //    console.log("new", newValue);
+                //    console.log("old", oldValue);
+                //})
             }
         };
     });

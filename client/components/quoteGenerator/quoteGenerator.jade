@@ -1,24 +1,30 @@
-.col-md-6.quote-frame(ng-style="{ 'background-color': background, 'border-width': background ? '0px' : '1px' }")
-    p.quote(ng-bind-html="quote", ng-style="{ 'color': textColor }")
+.container
+    .row
+        h2 Generator
+        .col-md-6
+            .quote-frame(ng-style="{ 'background-color': background, 'border-width': background ? '0px' : '1px' }")
+                p.quote(ng-bind-html="quote", ng-style="{ 'color': textColor }")
 
-    .footer
-        img.logo(src="assets/images/logo178x140.jpg", ng-style="{ 'width': logoWidth }")
-        span.hashtag #feotd
+                .footer
+                    .logo(ng-style="{ 'width': logoWidth }")
+                    span.hashtag #feotd
 
-.col-md-6.editor
-    form
-        .form-group
-            input(ng-model="background", type="text", class="form-control")
-        .form-group
-            textarea(ng-model="quote", class="form-control", placeholder="Enter quote here")
-        .form-group
-            input(ng-model="textColor", type="text", class="form-control")
-            input(ng-model="logoWidth", type="text", class="form-control")
-        .form-group.buttons.ui-buttonset
-            input.ui-button(type="button", class="btn btn-default", value="Share to Instagram", ng-click="share('instagram')")
-            input.ui-button(type="button", class="btn btn-default", value="Share to Twitter", ng-click="share('twitter')")
-            input.ui-button(type="button", class="btn btn-default", value="Share to Facebook", ng-click="share('facebook')")
-            input.ui-button(type="button", class="btn btn-default", value="Save as image", ng-click="save()")
+        .col-md-6
+            form.editor
+                .form-group
+                    input(ng-model="background", type="text", class="form-control")
+                .form-group
+                    textarea(ng-model="quote", class="form-control", placeholder="Enter quote here")
+                .form-group
+                    input(ng-model="textColor", type="text", class="form-control")
+                    input(ng-model="logoWidth", type="text", class="form-control")
+                .form-group.buttons.ui-buttonset
+                    input.ui-button(type="button", class="btn btn-default", value="Share to Instagram", ng-click="share('instagram')")
+                    input.ui-button(type="button", class="btn btn-default", value="Share to Twitter", ng-click="share('twitter')")
+                    input.ui-button(type="button", class="btn btn-default", value="Share to Facebook", ng-click="share('facebook')")
+                    input.ui-button(type="button", class="btn btn-default", value="Save as image", ng-click="save()")
 
-
-    img#result(ng-if="result", ng-src="{{ result }}")
+    .row(ng-if="result")
+        h2 Image
+        .col-md-6
+            img#result(ng-src="{{ result }}")
